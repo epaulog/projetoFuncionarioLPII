@@ -99,7 +99,7 @@ public class TelaFuncionario {
         System.out.println("--  Salário  ------------------------");
         System.out.printf ("- Salário Bruto\t\t= %#9.2f\n",funcionario.getSalarioBruto());
         
-        if (funcionario.valorINSS() < funcionario.TETO)
+        if (funcionario.valorINSS() < funcionario.getLimiteINSS())
             System.out.printf("- INSS (%#3.2f%%)\t\t= %#9.2f\n", funcionario.txINSS(), funcionario.valorINSS());
 
         else
@@ -120,5 +120,30 @@ public class TelaFuncionario {
         System.out.println("- Rua: " + funcionario.getEndereco());
         System.out.println("-------------------------------------");
     }//imprimeEndereco()
+    
+    public static void alteraLimiteINSS() {
+    	double limite = 0;
+    	String limiteString;
+    	imprimeLimiteINSS();
+    	System.out.println("Entre com o TETO de INSS que será utilizado (se vazio ou negativo limite continuará sendo usado): ");
+        limiteString = input.nextLine();
+        
+        try {
+	        limiteString.replaceAll( "," , "." );	        
+	        limite = Double.parseDouble( limiteString.trim() );
+        } 
+        catch (Exception e) {
+        	limite = -1;
+        }
+        
+        if (limite > 0 ) 
+        	Funcionario.setLimiteINSS(limite);
+        else 
+        	System.out.println("Valor mantido!");
+    }
 
+    public static void imprimeLimiteINSS() {
+    	System.out.printf ("Limite Atual do INSS é R$ %#3.2f\n", Funcionario.getLimiteINSS());
+    }
+    
 }

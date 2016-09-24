@@ -12,7 +12,10 @@
 package projetoFuncionario;
 
 public class Funcionario {
-    public final double TETO = 900.0;
+	public final char MASCULINO = 'M';
+	public final char FEMINO = 'F';
+	
+    private static double limiteINSS = 900.0;
     
     private String nome;
     private char sexo;
@@ -63,10 +66,10 @@ public class Funcionario {
     }//txINSS()
     
     public double valorINSS(){
-        if ((this.salarioBruto * this.txINSS()/100) < TETO)
+        if ((this.salarioBruto * this.txINSS()/100) < limiteINSS)
             return (this.salarioBruto * this.txINSS()/100);
         else
-            return (TETO);
+            return (limiteINSS);
     }//valorINSS()
                   
     public double salarioBaseIR(){
@@ -87,6 +90,14 @@ public class Funcionario {
     public double salarioLiquido(){
         return (this.salarioBruto - this.valorINSS() - this.valorIR());
     }//salarioLiquido()
+    
+    public static void setLimiteINSS(double _limiteINSS) {
+    	limiteINSS = _limiteINSS;
+    }
+    
+    public static double getLimiteINSS() {
+    	return limiteINSS;
+    }
     
     public void setNome(String n){
         if (n.length() >= 2){
