@@ -1,3 +1,14 @@
+/*
+ * Eden Paulo Gill
+ * 
+ * Linguagem de Programação II
+ * 
+ * Exercício Funcionário
+ * 
+ * Classe Funcionário
+ * 
+ * 
+ */
 package projetoFuncionario;
 
 public class Funcionario {
