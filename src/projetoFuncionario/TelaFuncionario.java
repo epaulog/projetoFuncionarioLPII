@@ -1,12 +1,13 @@
 /*
  * Eden Paulo Gill
  * 
- * Linguagem de Programa√ß√£o II
+ * Linguagem de ProgramaÁ„o II
  * 
- * Exerc√≠cio Funcion√°rio
+ * ExercÌcio Funcion·rio
  * 
- * Classe TelaFuncion√°rio
+ * Classe TelaFuncion·rio
  * 
+ * AlteraÁ„o para o item 1.6
  * 
  */
 
@@ -32,7 +33,7 @@ public class TelaFuncionario {
             this.funcionario = f;
         }
         else {
-            throw new RuntimeException("Erro: Funcin√°rio null.");
+            throw new RuntimeException("Erro: Funcin·rio null.");
         }
     }//setFuncionario()
     
@@ -58,7 +59,7 @@ public class TelaFuncionario {
         int num;
         System.out.println("Digite a Rua: ");
         rua = input.nextLine();
-        System.out.println("Digite o n√∫mero: ");
+        System.out.println("Digite o n˙mero: ");
         num = input.nextInt();
         input.nextLine();
         
@@ -73,11 +74,11 @@ public class TelaFuncionario {
     
     public void leSalarioBruto(){
         double sal = 0;
-        System.out.print("Digite o Sal√°rio: ");
+        System.out.print("Digite o Sal·rio: ");
         while (sal <=0){
             sal = input.nextDouble();
             if (sal <= 0 ){
-                System.out.println("O Sal√°rio deve ser diferente de 0 e positivo\nDigite o Sal√°rio: ");
+                System.out.println("O Sal·rio deve ser diferente de 0 e positivo\nDigite o Sal·rio: ");
             }
         }
         input.nextLine(); //pega os caracteres extras limpando o buffer de teclado
@@ -86,7 +87,7 @@ public class TelaFuncionario {
 
     public void imprimeFuncionario(){
         System.out.println("-------------------------------------");
-        System.out.println("--  Dados do Funcion√°rio  -----------");
+        System.out.println("--  Dados do Funcion·rio  -----------");
         System.out.println("-");
         System.out.println("- Nome: " + funcionario.getNome());
         System.out.println("- Sexo: " + funcionario.getSexo());
@@ -96,27 +97,27 @@ public class TelaFuncionario {
     }//imprimeFuncionario()
     
     public void imprimeSalario(){
-        System.out.println("--  Sal√°rio  ------------------------");
-        System.out.printf ("- Sal√°rio Bruto\t\t= %#9.2f\n",funcionario.getSalarioBruto());
+        System.out.println("--  Sal·rio  ------------------------");
+        System.out.printf ("- Sal·rio Bruto\t\t= %#9.2f\n",funcionario.getSalarioBruto());
         
-        if (funcionario.valorINSS() < funcionario.getLimiteINSS())
+        if (funcionario.valorINSS() < Funcionario.getLimiteINSS())
             System.out.printf("- INSS (%#3.2f%%)\t\t= %#9.2f\n", funcionario.txINSS(), funcionario.valorINSS());
 
         else
             System.out.printf("- INSS (%#3.2f%% -> teto)\t= %#9.2f\n", funcionario.txINSS(), funcionario.valorINSS());
         
         System.out.println("-                         ---------");
-        System.out.printf ("- Sal√°rio Base IR\t= %#9.2f\n", funcionario.salarioBaseIR());
+        System.out.printf ("- Sal·rio Base IR\t= %#9.2f\n", funcionario.salarioBaseIR());
         System.out.printf ("- IR (%#3.2f%%)\t\t= %#9.2f\n", funcionario.txIR(), funcionario.valorIR());
         System.out.println("-                         ---------");
-        System.out.printf ("- Sal√°rio L√≠quido\t= %#9.2f\n", funcionario.salarioLiquido());
+        System.out.printf ("- Sal·rio LÌquido\t= %#9.2f\n", funcionario.salarioLiquido());
         System.out.println("-");
         System.out.println("-------------------------------------");
         System.out.println("");
     }//imprimeSalario()
     
     public void imprimeEndereco(){
-        System.out.println("-- Endere√ßo -------------------------");
+        System.out.println("-- EndereÁo -------------------------");
         System.out.println("- Rua: " + funcionario.getEndereco());
         System.out.println("-------------------------------------");
     }//imprimeEndereco()
@@ -125,7 +126,7 @@ public class TelaFuncionario {
     	double limite = 0;
     	String limiteString;
     	imprimeLimiteINSS();
-    	System.out.println("Entre com o TETO de INSS que ser√° utilizado (se vazio ou negativo limite continuar√° sendo usado): ");
+    	System.out.println("Entre com o TETO de INSS que ser·° utilizado (se vazio ou negativo limite continuar·° sendo usado): ");
         limiteString = input.nextLine();
         
         try {
@@ -143,7 +144,7 @@ public class TelaFuncionario {
     }
 
     public static void imprimeLimiteINSS() {
-    	System.out.printf ("Limite Atual do INSS √© R$ %#3.2f\n", Funcionario.getLimiteINSS());
+    	System.out.printf ("Limite Atual do INSS È R$%#3.2f\n", Funcionario.getLimiteINSS());
     }
     
 }

@@ -5,8 +5,9 @@
  * 
  * Exercício Funcionário
  * 
- * Classe TestaFuncinário4
+ * Classe TestaFuncionário4
  * 
+ * Alteração para o item 1.6
  * 
  */
 

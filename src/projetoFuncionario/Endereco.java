@@ -1,12 +1,13 @@
 /*
  * Eden Paulo Gill
  * 
- * Linguagem de ProgramaÃ§Ã£o II
+ * Linguagem de Programação II
  * 
- * ExercÃ­cio FuncionÃ¡rio
+ * Exercício Funcionário
  * 
- * Classe EndereÃ§o
+ * Classe Endereço
  * 
+ * Alteração para o item 1.6
  * 
  */
 

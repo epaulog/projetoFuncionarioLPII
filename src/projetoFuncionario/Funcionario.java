@@ -1,12 +1,13 @@
 /*
  * Eden Paulo Gill
  * 
- * Linguagem de Programa√ß√£o II
+ * Linguagem de ProgramaÁ„o II
  * 
- * Exerc√≠cio Funcion√°rio
+ * ExercÌcio Funcion·rio
  * 
- * Classe Funcion√°rio
+ * Classe Funcion·rio
  * 
+ * AlteraÁ„o para o item 1.6
  * 
  */
 package projetoFuncionario;
