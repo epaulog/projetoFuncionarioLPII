@@ -25,7 +25,7 @@ public class TestaFuncionario4 {
                     f2, 
                     f3;
         
-        TelaFuncionario telaComum;  //declaraçãoo de um única tela que será utilizada para cada uma das impressoes
+        TelaFuncionario telaComum;  //declaraçãoo de uma única tela que será utilizada para cada uma das impressões
         
         
         //Instanciar as duas variaveis criando os objetos
