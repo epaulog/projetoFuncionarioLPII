@@ -12,7 +12,7 @@
  */
 package projetoFuncionario;
 
-public class Funcionario {
+public abstract class Funcionario {
 	public final char MASCULINO = 'M';
 	public final char FEMINO = 'F';
 	
@@ -22,7 +22,10 @@ public class Funcionario {
     private char sexo;
     private String cpf;
     private Endereco endereco;
-    private double salarioBruto;
+
+    abstract public float salarioBruto();
+    
+    
     
     //contrutor vazio
     public Funcionario(){
@@ -34,47 +37,49 @@ public class Funcionario {
         e = new Endereco(" ", 1);
         this.setEndereco(e);
 
-        this.setSalario(1);
+ //       this.setSalario(1);
     }//Funcionario()
     
     //construtor com parametros explicitos
     public Funcionario(String nome, char sexo, String rua, int numero, 
-                        String cpf, double salario){
+                        String cpf){
         this.setNome(nome);
         this.setSexo(sexo);
         this.setCPF(cpf);
 
         this.setEndereco(rua, numero);
         
-        this.setSalario(salario);
+ //       this.setSalario(salario);
     }//Funcionario(n,s,c,r,n,sal)
     
     //construtor com endereco
     public Funcionario(String nome, char sexo, Endereco endereco, 
-                        String cpf, double salario){
+                        String cpf){
         this.setNome(nome);
         this.setSexo(sexo);
         this.setCPF(cpf);
         this.setEndereco(endereco);
-        this.setSalario(salario);
+//        this.setSalario(salario);
     }//Funcionario(n,s,e,c,sal)
+
+   
     
     public double txINSS(){
-        if ((this.salarioBruto) <= 1000) return 8;
-        else if ((this.salarioBruto) <= 2000) return 9;
-        else if ((this.salarioBruto) <= 3000) return 10;
+        if ((this.salarioBruto()) <= 1000) return 8;
+        else if ((this.salarioBruto()) <= 2000) return 9;
+        else if ((this.salarioBruto()) <= 3000) return 10;
         else return 11;
     }//txINSS()
     
     public double valorINSS(){
-        if ((this.salarioBruto * this.txINSS()/100) < limiteINSS)
-            return (this.salarioBruto * this.txINSS()/100);
+        if ((this.salarioBruto() * this.txINSS()/100) < limiteINSS)
+            return (this.salarioBruto() * this.txINSS()/100);
         else
             return (limiteINSS);
     }//valorINSS()
                   
     public double salarioBaseIR(){
-        return (this.salarioBruto - this.valorINSS());
+        return (this.salarioBruto() - this.valorINSS());
     }//salarioBaseIR()
     
     public double txIR(){
@@ -89,11 +94,16 @@ public class Funcionario {
     }//valorIR()
     
     public double salarioLiquido(){
-        return (this.salarioBruto - this.valorINSS() - this.valorIR());
+        return (this.salarioBruto() - this.valorINSS() - this.valorIR());
     }//salarioLiquido()
     
     public static void setLimiteINSS(double _limiteINSS) {
-    	limiteINSS = _limiteINSS;
+    	if (limiteINSS > 0) {
+    		limiteINSS = _limiteINSS;
+    	}	
+    	else {
+    		throw new RuntimeException("Erro: o Limite de INSS deve ser numérico e maior do que 0.");
+    	}
     }
     
     public static double getLimiteINSS() {
@@ -127,21 +137,22 @@ public class Funcionario {
         }
     }//setCPF()
     
-    public void setSalario(double s){
+/*    public void setSalario(double s){
         if (s > 0){
-            this.salarioBruto = s;
+            this.salarioBruto() = s;
         }
         else {
             throw new RuntimeException("Erro: salário deve ser um valor positivo.");
         }
     }//setSalario()
-
+*/
+    
     public String getCPF() {
         return cpf;
     }//getCPF
 
     public double getSalarioBruto() {
-        return salarioBruto;
+        return salarioBruto();
     }//getSalarioBruto()
 
     public String getNome() {
