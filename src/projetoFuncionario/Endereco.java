@@ -19,33 +19,25 @@ public class Endereco {
     private int numero;
     
     
-    public Endereco(String rua, int numero) {
-        this.setRua(rua);
-        this.setNumero(numero);
+    public Endereco(String _rua, int _numero) {
+        setRua(_rua);
+        setNumero(_numero);
     }
-    /**
-     * @return the rua
-     */
+
     public String getRua() {
         return rua;
     }
-    /**
-     * @param rua the rua to set
-     */
-    public void setRua(String rua) {
-        this.rua = rua;
+
+    public void setRua(String _rua) {
+        rua = _rua;
     }
-    /**
-     * @return the numero
-     */
+
     public int getNumero() {
         return numero;
     }
-    /**
-     * @param numero the numero to set
-     */
-    public void setNumero(int numero) {
-        this.numero = numero;
+
+    public void setNumero(int _numero) {
+        numero = _numero;
     }
 
 }

@@ -24,19 +24,18 @@ public class TelaFuncionario {
     protected static Scanner input = new Scanner(System.in);
 
     
-    public TelaFuncionario(Funcionario f){
+    public TelaFuncionario(Funcionario f) {
         this.setFuncionario(f);
-    }//TelaFuncionario
+    }
     
-    public void setFuncionario(Funcionario f){
+    public void setFuncionario(Funcionario f) {
         if (f != null){
             this.funcionario = f;
         }
         else {
             throw new RuntimeException("Erro: Funcionário null.");
         }
-    }//setFuncionario()
-    
+    }
     
     public void leDados(Funcionario f) {
     	leNome();
